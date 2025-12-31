@@ -7,4 +7,4 @@ router.put('/', (req, res) => res.send('Update User'))
 router.delete('/:id', (req, res) => res.send('Delete user'))
 router.get('/:id', (req, res) => res.send('User with id'))
 
-module.exports =  router  
+module.exports =  router

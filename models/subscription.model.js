@@ -10,6 +10,10 @@ const subscriptionSchema = new Schema({
         minLength: 5,
         maxLength: 100,
     },
+    User:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'User'
+    },
     price: {
         type: Number,
         required: [true, 'Subscription is required'],
@@ -47,9 +51,7 @@ subscriptionSchema.pre('save', function (next) {
 subscriptionSchema.pre('findOneAndUpdate', function (next) {
     const update = this.getUpdate()
     if (update.duration) {
-        update.renewalDate = dayjs(update.startdate || new Date())
-            .add(update.duration, 'day')
-            .toDate()
+        update.renewalDate = dayjs(update.startdate || new Date()).add(update.duration,'day').toDate()
     }
     next()
 })
