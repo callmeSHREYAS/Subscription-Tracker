@@ -9,7 +9,7 @@ const errorHandler = require('./middleware/errorHandler');
 const PORT = process.env.PORT
 
 app.use(logger)
-app.use(errorHandler)
+
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
@@ -19,7 +19,7 @@ app.use('/auth', require('./routes/auth'))
 app.use('/subscription', require('./routes/subscription'))
 app.use('/user', require('./routes/user'))
 
-
+app.use(errorHandler)
 mongoose.connection.once('open', () => {
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
 })
