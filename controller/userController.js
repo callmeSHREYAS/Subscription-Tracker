@@ -64,7 +64,7 @@ const deleteUser = async (req, res)=>{
     const user = await User.findOne({ _id: req.params.id }).exec()
     if (!user) res.status(400).json({ 'message': 'User with givenid doesn\'t exist' });
     const result = await User.deleteOne({ _id: req.params.id })
-    console.log(result);
+    res.json(result)
 }
 
 const getUser=async(req,res)=>{
