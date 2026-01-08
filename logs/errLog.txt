@@ -11,3 +11,15 @@
 2026:01:07	22:03:53	47249975-564d-46b5-a63f-8c5425be9c85	Error : Cannot set headers after they are sent to the client
 2026:01:07	22:04:10	0549cee2-6010-4ccf-a090-8c0cdbb0b6ae	Error : Cannot set headers after they are sent to the client
 2026:01:07	22:07:52	b71a6b9b-1c36-47c5-a3e3-50d0284a2451	Error : Cannot set headers after they are sent to the client
+2026:01:07	22:41:52	67865f62-1382-4698-a865-34e2c1c44cf5	JsonWebTokenError : verify must be called asynchronous if secret or public key is provided as a callback
+2026:01:07	22:42:07	4e189993-1a16-4127-b3c3-b3661792a7e4	JsonWebTokenError : verify must be called asynchronous if secret or public key is provided as a callback
+2026:01:07	22:42:37	c095b3fc-d545-408b-abf5-0aba3a3b3bd9	JsonWebTokenError : verify must be called asynchronous if secret or public key is provided as a callback
+2026:01:07	22:43:10	521168eb-3583-4b3b-8a6e-c0124930595b	JsonWebTokenError : jwt malformed
+2026:01:07	22:43:21	bcab6723-28ed-425b-902e-9cd558374313	JsonWebTokenError : jwt malformed
+2026:01:07	22:44:31	65ba7bc6-da79-486e-8610-4cf832253d36	JsonWebTokenError : verify must be called asynchronous if secret or public key is provided as a callback
+2026:01:07	22:46:00	2883079f-2fbe-466d-b1cf-92972be1fdd8	JsonWebTokenError : verify must be called asynchronous if secret or public key is provided as a callback
+2026:01:07	22:47:59	caecb3df-6590-4d16-ac08-0748b78930fa	TypeError : Cannot read properties of undefined (reading 'username')
+2026:01:07	22:49:09	5ddfa549-5263-423c-a70e-51c17b7bac6d	ReferenceError : decodedusername is not defined
+2026:01:07	22:49:34	a5288c0e-3252-4f51-a4d4-7983d931267c	TypeError : Cannot read properties of undefined (reading 'roles')
+2026:01:07	22:51:05	4804a341-72e6-4347-844a-673a02658724	JsonWebTokenError : verify must be called asynchronous if secret or public key is provided as a callback
+2026:01:07	22:52:00	03fec8be-e3f7-4449-8e65-6d7844ff871b	JsonWebTokenError : verify must be called asynchronous if secret or public key is provided as a callback

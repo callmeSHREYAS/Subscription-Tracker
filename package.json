@@ -13,6 +13,8 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@arcjet/inspect": "^1.0.0-beta.16",
+    "@arcjet/node": "^1.0.0-beta.16",
     "bcrypt": "^6.0.0",
     "date-fns": "^4.1.0",
     "dayjs": "^1.11.19",
