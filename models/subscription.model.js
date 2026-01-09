@@ -10,7 +10,7 @@ const subscriptionSchema = new Schema({
         minLength: 5,
         maxLength: 100,
     },
-    User:{
+    user:{
         type: mongoose.Schema.Types.ObjectId,
         ref:'User'
     },
@@ -19,6 +19,16 @@ const subscriptionSchema = new Schema({
         required: [true, 'Subscription is required'],
         min: [0, 'Price must be more than 0']
     },
+    paymentMethod:{
+        type:String,
+        required:true,
+        trim:true
+    },
+    status:{
+        type:String,
+        enum:['active' , 'cancelled','expired'],
+        default:'active',
+    },
     currency: {
         type: String,
         enum: ['USD', 'EUR', 'INR'],
@@ -26,7 +36,7 @@ const subscriptionSchema = new Schema({
     },
     frequency: {
         type: String,
-        enum: ['weekly', 'monthly', 'yearly']
+        enum: ['daily','weekly', 'monthly', 'yearly']
     },
     startdate: {
         type: Date,
@@ -41,20 +51,14 @@ const subscriptionSchema = new Schema({
     }
 }, { timestamps: true })
 
-subscriptionSchema.pre('save', function (next) {
+subscriptionSchema.pre('save', function () {
     if (this.startdate && this.duration) {
         this.renewalDate = dayjs(this.startdate).add(this.duration, "day").toDate()
     }
-    next()
+
 })
 
-subscriptionSchema.pre('findOneAndUpdate', function (next) {
-    const update = this.getUpdate()
-    if (update.duration) {
-        update.renewalDate = dayjs(update.startdate || new Date()).add(update.duration,'day').toDate()
-    }
-    next()
-})
+
 
 
 const Subscription = mongoose.model('Subscription', subscriptionSchema)

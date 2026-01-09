@@ -23,3 +23,31 @@
 2026:01:07	22:49:34	a5288c0e-3252-4f51-a4d4-7983d931267c	TypeError : Cannot read properties of undefined (reading 'roles')
 2026:01:07	22:51:05	4804a341-72e6-4347-844a-673a02658724	JsonWebTokenError : verify must be called asynchronous if secret or public key is provided as a callback
 2026:01:07	22:52:00	03fec8be-e3f7-4449-8e65-6d7844ff871b	JsonWebTokenError : verify must be called asynchronous if secret or public key is provided as a callback
+2026:01:09	13:03:02	8f47044b-a9fa-4ce8-a507-4fd149f1d1f3	TypeError : callback is not a function
+2026:01:09	13:04:33	7bb4a8ab-d3b3-4de1-b82c-f2d0cef42bc3	TypeError : callback is not a function
+2026:01:09	13:09:46	4b636f10-4487-4916-aae6-4192ef7a1e94	TypeError : callback is not a function
+2026:01:09	15:49:52	bcf266d2-35ee-4c1b-a937-2429a9dd534e	TypeError : Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle
+2026:01:09	15:50:15	8bfe8c15-684c-4c61-a7ad-57adf85e98fd	TypeError : Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle
+2026:01:09	15:51:12	28e6da7c-2b68-46d8-ad16-3f7b98154130	TypeError : Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle
+2026:01:09	15:51:49	9b3fb7ca-58ca-40d3-a52a-004f6c5cb563	TypeError : Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle
+2026:01:09	15:52:14	a60f517a-5395-42a9-82f9-5a0e45b6d7b4	TypeError : Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle

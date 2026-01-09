@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const connectDB = require('./config/dbConn');
 const { logger } = require('./middleware/logEvents');
 const errorHandler = require('./middleware/errorHandler');
+const arcjetMiddleware = require('./middleware/arcjet.middleware');
 
 const PORT = process.env.PORT
 
@@ -12,7 +13,7 @@ app.use(logger)
 
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
-
+app.use(arcjetMiddleware)
 
 connectDB()
 app.use('/auth', require('./routes/auth'))

@@ -12,12 +12,7 @@ const postNewUser = async (req, res) => {
     if (!user || !email || !pwd) {
         res.status(400).json({ 'message': 'username , email and password are required' })
     }
-    const duplicate = await User.findOne({
-        $or: [
-            { username: user },
-            { email: email }
-        ]
-    }).exec()
+    const duplicate = await User.findOne({ username: user }).exec()
     if (duplicate) return res.sendStatus(409);
 
     try {
