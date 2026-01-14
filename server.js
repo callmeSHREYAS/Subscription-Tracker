@@ -19,6 +19,7 @@ connectDB()
 app.use('/auth', require('./routes/auth'))
 app.use('/subscription', require('./routes/subscription'))
 app.use('/user', require('./routes/user'))
+app.use('/workflow' , require('./routes/workflow'))
 
 app.use(errorHandler)
 mongoose.connection.once('open', () => {

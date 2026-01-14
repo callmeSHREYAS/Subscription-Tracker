@@ -1,6 +1,6 @@
 const express = require('express')
 const verifyJWT = require('../middleware/verifyJWT')
-const {createSubscription, getSubscription} = require('../controller/subscriptionCOntroller')
+const {createSubscription, getSubscription} = require('../controller/subscriptionController')
 
 const router = express.Router()
 
