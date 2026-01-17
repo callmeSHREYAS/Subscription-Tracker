@@ -1,6 +1,7 @@
 const Subscription = require("../models/subscription.model")
 const { serve } = require('@upstash/workflow/express');
 const dayjs = require('dayjs');
+const { sendReminderEmail } = require("../utils/send_emails");
 
 const REMINDERS = [7, 5, 2, 1]
 const sendReminders = serve(async (context) => {
@@ -40,9 +41,13 @@ const sleepUnitReminder = async (context, label, date) => {
 }
 
 const triggerReminder = async (context, label) => {
-    return await context.run(label, () => {
+    return await context.run(label, async() => {
         console.log(`Triggering ${label} reminder`);
         // Send email SMS 
+        await sendReminderEmail({
+            to:subscription.user.email,
+            type:reminder.label.subscription,
+        })
     })
 }
 

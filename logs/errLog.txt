@@ -51,3 +51,4 @@
     |     property 's' -> object with constructor 'Object'
     |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
     --- property 'client' closes the circle
+2026:01:14	14:01:03	997291fc-9ca5-43e7-8185-ffb3b9faa586	SyntaxError : Bad control character in string literal in JSON at position 28 (line 2 column 26)

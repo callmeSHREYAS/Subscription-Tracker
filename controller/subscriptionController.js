@@ -9,19 +9,20 @@ const createSubscription = async (req, res) => {
             user: req.id
         })
 
-        const { workflowRunId } = await workflowClient.trigger({
-            url: `${process.env.SERVER_URL}/workflow/subscription/reminder`,
-            body: {
-                subscriptionId: subscription.id,
-            },
-            headers: {
-                'content-type': 'application/json',
-            },
-            retries: 0,
-        })
+        // const { workflowRunId } = await workflowClient.trigger({
+        //     url: `${process.env.SERVER_URL}/workflow/subscription/reminder`,
+        //     body: {
+        //         subscriptionId: subscription.id,
+        //     },
+        //     headers: {
+        //         'content-type': 'application/json',
+        //     },
+        //     retries: 0,
+        // })
      
         
-        res.status(201).json({ 'success': true, 'data': subscription ,workflowRunId })
+        // res.status(201).json({ 'success': true, 'data': subscription ,workflowRunId })
+        res.status(201).json({ 'success': true, 'data': subscription })
     } catch (error) {
         console.error(error)
     }
