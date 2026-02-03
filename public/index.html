@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Subscription App</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Subscription Management</h1>
+
+        <!-- SIGNUP / LOGIN -->
+        <div id="auth">
+            <input type="text" id="username" placeholder="Username" />
+            <input type="email" id="email" placeholder="Enter your Gmail address" />
+
+            <input type="password" id="password" placeholder="Password" />
+
+
+            <button onclick="signup()">Sign Up</button>
+            <button onclick="login()">Login</button>
+        </div>
+
+        <!-- USER DASHBOARD -->
+        <div id="dashboard" class="hidden">
+
+            <h2>Welcome, <span id="user"></span></h2>
+
+            <button onclick="getSubscriptions()">View Plans</button>
+
+            <ul id="plansList"></ul>
+
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

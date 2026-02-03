@@ -4,37 +4,39 @@ const jwt = require('jsonwebtoken')
 
 const handelLogin = async (req, res) => {
     const { user, email, pwd } = req.body
-    if(!user ||  !email || !pwd){
-        return res.status(400).json({'message':'Please enter user, email ,pwd are required'})
+    if (!user || !email || !pwd) {
+        return res.status(400).json({ 'message': 'Please enter user, email ,pwd are required' })
     }
     const foundUser = await User.findOne({
-        $and:[
-            {username:user},
-            {email:email}
+        $and: [
+            { username: user },
+            { email: email }
         ]
     }).exec()
-    if(!foundUser) return res.sendStatus(401) 
-    const match =await bcrypt.compare(pwd , foundUser.password)
-    if(match){
+    if (!foundUser) return res.sendStatus(401)
+    const match = await bcrypt.compare(pwd, foundUser.password)
+    if (match) {
         const accessToken = jwt.sign(
-            {'userId': foundUser._id},
+            { 'userId': foundUser._id },
             process.env.ACCESS_TOKEN_SECRET,
-            {expiresIn:'1d'}
+            { expiresIn: '1d' }
         )
         const refreshToken = jwt.sign(
-            {'username':foundUser.username},
+            { 'username': foundUser.username },
             process.env.REFRESH_TOKEN_SECRET,
-            {expiresIn:'4d'}
+            { expiresIn: '4d' }
         )
         res.cookie('jwt', refreshToken, {
             httpOnly: true,
-            sameSite: 'Lax',   
-            secure: false,  
+            sameSite: 'Lax',
+            secure: false,
             maxAge: 24 * 60 * 60 * 1000
         });
         console.log(accessToken);
-        res.json({ accessToken })
-    }else{
+        res.json({
+            token: accessToken
+        });
+    } else {
         res.sendStatus(401)
     }
 }
